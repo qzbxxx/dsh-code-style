@@ -2,6 +2,14 @@
   "name": "dsh-code-style",
   "version": "0.1.0",
   "description": "把 code-style 技能打包成 DSH 插件：按“可读性优先”的规则编写、重构和审查代码。",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qzbxxx/dsh-code-style.git"
+  },
+  "homepage": "https://github.com/qzbxxx/dsh-code-style#readme",
+  "bugs": {
+    "url": "https://github.com/qzbxxx/dsh-code-style/issues"
+  },
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -30,7 +38,7 @@
     "code-style"
   ],
   "scripts": {
-    "test": "node --test"
+    "test": "node test/plugin.test.mjs"
   },
   "license": "MIT",
   "engines": {

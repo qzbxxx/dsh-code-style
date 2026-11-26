@@ -4,6 +4,8 @@
 
 这是一个 **Host-only 技能提供方 bundle**：没有客户端代码、没有第三方依赖、没有构建步骤。
 
+仓库地址：<https://github.com/qzbxxx/dsh-code-style>
+
 ## 提供的能力
 
 - 注册技能 `code-style`，`source` 为 `plugin`，并声明 `resourceBase` 指向包内 `assets/`。
@@ -29,13 +31,18 @@ dsh-code-style/
 
 ## 安装
 
-1. 打开 DSH 的插件管理界面。
-2. 选择“从本地目录安装 / Install bundle”，目标目录填本包的绝对路径：
-   `C:\Users\Lenovo\Documents\deepseek-harness\default-workspace\dsh-code-style`
-3. 确认安装后的 bundle 已启用。新增 bundle 通常可以 HMR 生效；如果技能目录没有刷新，重启 DSH。
-4. 在技能列表中应该看到“代码风格 / Code Style”，技能名为 `code-style`。
+1. 克隆仓库到本地：
 
-如果当前会话有 `plugin_manager` 工具，应使用它的 `install_bundle`（`target` 传上面的绝对路径），不要手写 profile 的 `package.json` 或 `cordis.patch.yml`，也不要在 profile 目录里跑 pnpm。
+   ```bash
+   git clone https://github.com/qzbxxx/dsh-code-style.git
+   ```
+
+2. 打开 DSH 的插件管理界面。
+3. 选择“从本地目录安装 / Install bundle”，目标目录选择克隆下来的 `dsh-code-style` 目录。
+4. 确认安装后的 bundle 已启用。新增 bundle 通常可以 HMR 生效；如果技能目录没有刷新，重启 DSH。
+5. 在技能列表中应该看到“代码风格 / Code Style”，技能名为 `code-style`。
+
+如果当前会话有 `plugin_manager` 工具，应使用它的 `install_bundle`（`target` 传克隆目录的绝对路径），不要手写 profile 的 `package.json` 或 `cordis.patch.yml`，也不要在 profile 目录里跑 pnpm。
 
 ## 验证
 
@@ -45,8 +52,8 @@ dsh-code-style/
 
 命令行 smoke test（不依赖 DSH 运行时）：
 
-```powershell
-cd C:\Users\Lenovo\Documents\deepseek-harness\default-workspace\dsh-code-style
+```bash
+cd dsh-code-style
 node test/plugin.test.mjs
 ```
 
