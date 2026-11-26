@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-code-style
+      name: dsh-code-style
+      config: {}
